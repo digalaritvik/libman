@@ -212,85 +212,303 @@ BOOK_LANGUAGES = [
 ]
 
 POPULAR_BOOKS = [
+    # Fiction - English
     {
         "title": "To Kill a Mockingbird",
         "author": "Harper Lee",
         "category": "Fiction",
         "language": "English",
         "price": 12.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71FxgtFKcQL.AC_UF1000,1000_QL80.jpg"
+        "cover_url": "https://m.media-amazon.com/images/I/71FxgtFKcQL.AC_UF1000,1000_QL80.jpg",
+        "description": "A classic novel about racial injustice and moral growth in the American South during the 1930s.",
+        "isbn": "9780446310789",
+        "pages": 281,
+        "publisher": "Grand Central Publishing",
+        "publication_date": "1988-10-11"
     },
     {
-        "title": "1984",
-        "author": "George Orwell",
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
         "category": "Fiction",
         "language": "English",
-        "price": 10.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71kxa1-0mfL.AC_UF1000,1000_QL80.jpg"
+        "price": 9.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71FTb9X6wsL.AC_UF1000,1000_QL80.jpg",
+        "description": "A story of decadence and excess, exploring themes of the American Dream and social class in the 1920s.",
+        "isbn": "9780743273565",
+        "pages": 180,
+        "publisher": "Scribner",
+        "publication_date": "2004-09-30"
     },
+
+    # Fiction - Hindi
     {
-        "title": "The Alchemist",
-        "author": "Paulo Coelho",
+        "title": "Godan",
+        "author": "Munshi Premchand",
         "category": "Fiction",
-        "language": "English",
-        "price": 11.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71aFt4+OTOL.AC_UF1000,1000_QL80.jpg"
+        "language": "Hindi",
+        "price": 8.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A classic Hindi novel depicting the life of Indian peasants and their struggles with poverty and social injustice.",
+        "isbn": "9788122200714",
+        "pages": 320,
+        "publisher": "Raja Pocket Books",
+        "publication_date": "1936-01-01"
     },
     {
-        "title": "Brief History of Time",
+        "title": "Mahabharat",
+        "author": "Ved Vyas",
+        "category": "Fiction",
+        "language": "Hindi",
+        "price": 15.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "An epic tale of the Kuru dynasty, featuring the great war of Kurukshetra and the teachings of the Bhagavad Gita.",
+        "isbn": "9788122200715",
+        "pages": 1000,
+        "publisher": "Gita Press",
+        "publication_date": "2000-01-01"
+    },
+
+    # Fiction - Telugu
+    {
+        "title": "Mala Palli",
+        "author": "Gurajada Apparao",
+        "category": "Fiction",
+        "language": "Telugu",
+        "price": 7.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A pioneering Telugu novel that addresses social issues and caste discrimination in early 20th century India.",
+        "isbn": "9788122200716",
+        "pages": 250,
+        "publisher": "Telugu Academy",
+        "publication_date": "1910-01-01"
+    },
+    {
+        "title": "Amrutham Kurisina Ratri",
+        "author": "Chalam",
+        "category": "Fiction",
+        "language": "Telugu",
+        "price": 9.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A revolutionary Telugu novel that challenges social norms and explores themes of love and freedom.",
+        "isbn": "9788122200717",
+        "pages": 280,
+        "publisher": "Navodaya Publishers",
+        "publication_date": "1928-01-01"
+    },
+
+    # Science - English
+    {
+        "title": "A Brief History of Time",
         "author": "Stephen Hawking",
         "category": "Science",
         "language": "English",
         "price": 14.99,
-        "cover_url": "https://m.media-amazon.com/images/I/A1xkFZX5k-L.AC_UF1000,1000_QL80.jpg"
+        "cover_url": "https://m.media-amazon.com/images/I/A1xkFZX5k-L.AC_UF1000,1000_QL80.jpg",
+        "description": "A landmark volume in science writing exploring the mysteries of space, time, and black holes.",
+        "isbn": "9780553380163",
+        "pages": 212,
+        "publisher": "Bantam",
+        "publication_date": "1998-09-01"
     },
     {
-        "title": "The Power of Habit",
-        "author": "Charles Duhigg",
-        "category": "Psychology",
+        "title": "The Selfish Gene",
+        "author": "Richard Dawkins",
+        "category": "Science",
         "language": "English",
         "price": 13.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg"
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A revolutionary book that explains evolution from the gene's perspective, introducing the concept of the selfish gene.",
+        "isbn": "9780198788607",
+        "pages": 544,
+        "publisher": "Oxford University Press",
+        "publication_date": "2016-05-26"
     },
+
+    # Science - Hindi
     {
-        "title": "Wings of Fire",
-        "author": "APJ Abdul Kalam",
-        "category": "Biography",
-        "language": "English",
-        "price": 9.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71KKZlVjbwL.AC_UF1000,1000_QL80.jpg"
+        "title": "Vigyan Ke Chamatkar",
+        "author": "Jagdish Chandra Bose",
+        "category": "Science",
+        "language": "Hindi",
+        "price": 11.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A collection of scientific essays explaining complex scientific concepts in simple Hindi.",
+        "isbn": "9788122200718",
+        "pages": 300,
+        "publisher": "National Book Trust",
+        "publication_date": "1950-01-01"
     },
-    {
-        "title": "Zero to One",
-        "author": "Peter Thiel",
-        "category": "Business",
-        "language": "English",
-        "price": 15.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71m-MxdJ2WL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "Sapiens",
-        "author": "Yuval Noah Harari",
-        "category": "History",
-        "language": "English",
-        "price": 16.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71N3-FFSDxL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "The Art of War",
-        "author": "Sun Tzu",
-        "category": "Philosophy",
-        "language": "English",
-        "price": 8.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71KM8RhcgbL.AC_UF1000,1000_QL80.jpg"
-    },
+
+    # Technology - English
     {
         "title": "Clean Code",
         "author": "Robert C. Martin",
         "category": "Technology",
         "language": "English",
         "price": 19.99,
-        "cover_url": "https://m.media-amazon.com/images/I/41xShlnTZTL.AC_UF1000,1000_QL80.jpg"
+        "cover_url": "https://m.media-amazon.com/images/I/41xShlnTZTL.AC_UF1000,1000_QL80.jpg",
+        "description": "A handbook of agile software craftsmanship that teaches how to write clean, maintainable code.",
+        "isbn": "9780132350884",
+        "pages": 464,
+        "publisher": "Prentice Hall",
+        "publication_date": "2008-08-11"
+    },
+    {
+        "title": "The Pragmatic Programmer",
+        "author": "Andrew Hunt",
+        "category": "Technology",
+        "language": "English",
+        "price": 24.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A guide to software development best practices and professional programming techniques.",
+        "isbn": "9780201616224",
+        "pages": 352,
+        "publisher": "Addison-Wesley Professional",
+        "publication_date": "1999-10-30"
+    },
+
+    # Technology - Telugu
+    {
+        "title": "Computer Shiksha",
+        "author": "Dr. K. Siva Sankar",
+        "category": "Technology",
+        "language": "Telugu",
+        "price": 15.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A comprehensive guide to computer science and programming in Telugu.",
+        "isbn": "9788122200719",
+        "pages": 400,
+        "publisher": "Telugu Academy",
+        "publication_date": "2010-01-01"
+    },
+
+    # History - English
+    {
+        "title": "Sapiens",
+        "author": "Yuval Noah Harari",
+        "category": "History",
+        "language": "English",
+        "price": 16.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71N3-FFSDxL.AC_UF1000,1000_QL80.jpg",
+        "description": "A groundbreaking narrative of humanity's creation and evolution that explores the ways in which biology and history have defined us.",
+        "isbn": "9780062316097",
+        "pages": 443,
+        "publisher": "Harper",
+        "publication_date": "2015-02-10"
+    },
+    {
+        "title": "Guns, Germs, and Steel",
+        "author": "Jared Diamond",
+        "category": "History",
+        "language": "English",
+        "price": 15.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A Pulitzer Prize-winning book that examines why human societies developed differently across the globe.",
+        "isbn": "9780393317558",
+        "pages": 480,
+        "publisher": "W. W. Norton & Company",
+        "publication_date": "1999-04-17"
+    },
+
+    # History - Hindi
+    {
+        "title": "Bharat Ka Itihas",
+        "author": "Ram Sharan Sharma",
+        "category": "History",
+        "language": "Hindi",
+        "price": 18.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A comprehensive history of India from ancient times to modern era in Hindi.",
+        "isbn": "9788122200720",
+        "pages": 600,
+        "publisher": "Rajkamal Prakashan",
+        "publication_date": "2005-01-01"
+    },
+
+    # Biography - English
+    {
+        "title": "Wings of Fire",
+        "author": "APJ Abdul Kalam",
+        "category": "Biography",
+        "language": "English",
+        "price": 9.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71KKZlVjbwL.AC_UF1000,1000_QL80.jpg",
+        "description": "An autobiography of India's most loved President, sharing his journey from a small town to becoming a renowned scientist.",
+        "isbn": "9788173711466",
+        "pages": 180,
+        "publisher": "Universities Press",
+        "publication_date": "1999-01-01"
+    },
+    {
+        "title": "Steve Jobs",
+        "author": "Walter Isaacson",
+        "category": "Biography",
+        "language": "English",
+        "price": 14.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "The authorized biography of Apple's co-founder, based on more than forty interviews with Jobs conducted over two years.",
+        "isbn": "9781451648539",
+        "pages": 656,
+        "publisher": "Simon & Schuster",
+        "publication_date": "2011-10-24"
+    },
+
+    # Biography - Telugu
+    {
+        "title": "Nenu",
+        "author": "Nandamuri Taraka Rama Rao",
+        "category": "Biography",
+        "language": "Telugu",
+        "price": 12.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "The autobiography of NTR, a legendary actor and former Chief Minister of Andhra Pradesh.",
+        "isbn": "9788122200721",
+        "pages": 350,
+        "publisher": "Navodaya Publishers",
+        "publication_date": "1980-01-01"
+    },
+
+    # Business - English
+    {
+        "title": "Zero to One",
+        "author": "Peter Thiel",
+        "category": "Business",
+        "language": "English",
+        "price": 15.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71m-MxdJ2WL.AC_UF1000,1000_QL80.jpg",
+        "description": "A book about how to build companies that create new things, based on the author's experience as a co-founder of PayPal.",
+        "isbn": "9780804139298",
+        "pages": 224,
+        "publisher": "Crown Business",
+        "publication_date": "2014-09-16"
+    },
+    {
+        "title": "Good to Great",
+        "author": "Jim Collins",
+        "category": "Business",
+        "language": "English",
+        "price": 16.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A management book that examines how good companies can become great companies.",
+        "isbn": "9780066620992",
+        "pages": 320,
+        "publisher": "Harper Business",
+        "publication_date": "2001-10-16"
+    },
+
+    # Business - Hindi
+    {
+        "title": "Vyapar Ke Siddhant",
+        "author": "Dr. Rajesh Kumar",
+        "category": "Business",
+        "language": "Hindi",
+        "price": 13.99,
+        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg",
+        "description": "A comprehensive guide to business principles and management in Hindi.",
+        "isbn": "9788122200722",
+        "pages": 400,
+        "publisher": "Rajkamal Prakashan",
+        "publication_date": "2015-01-01"
     }
 ]
 
@@ -952,10 +1170,10 @@ else:
                     # Fine summary
                     col1, col2 = st.columns(2)
                     with col1:
-                        total_fines = sum(f["amount"] for f in all_fines)
+                        total_fines = sum(f.get("amount", 0) for f in all_fines)
                         st.metric("Total Fines", f"${total_fines:.2f}")
                     with col2:
-                        unpaid_fines = sum(f["amount"] for f in all_fines)
+                        unpaid_fines = sum(f.get("amount", 0) for f in all_fines)
                         st.metric("Unpaid Fines", f"${unpaid_fines:.2f}")
 
                     # Fine payment
