@@ -6,6 +6,7 @@ import os
 import hashlib
 import random
 import string
+from books_data import LARGE_BOOK_LIST
 
 # Initialize session state variables
 if 'initialized' not in st.session_state:
@@ -174,13 +175,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Predefined datasets
-BOOK_CATEGORIES = [
-    "8",
-    "Fiction",
-    "Non-Fiction",
-    "Science",
-    "Technology"
-]
+BOOK_CATEGORIES = sorted(list(set(book["category"] for book in LARGE_BOOK_LIST)))
 
 BOOK_LANGUAGES = [
     "English",
@@ -770,9 +765,11 @@ else:
                             with col1:
                                 edited_title = st.text_input("Title", book["title"], key=f"edit_title_{book['id']}")
                                 edited_author = st.text_input("Author", book["author"], key=f"edit_author_{book['id']}")
-                                edited_category = st.selectbox("Category", BOOK_CATEGORIES,
-                                                               index=BOOK_CATEGORIES.index(book["category"]),
-                                                               key=f"edit_category_{book['id']}")
+                                try:
+                                    category_index = BOOK_CATEGORIES.index(book["category"])
+                                except ValueError:
+                                    category_index = 0
+                                edited_category = st.selectbox("Category", BOOK_CATEGORIES, index=category_index, key=f"edit_category_{book['id']}")
                                 edited_language = st.selectbox("Language", BOOK_LANGUAGES,
                                                                index=BOOK_LANGUAGES.index(book["language"]),
                                                                key=f"edit_language_{book['id']}")
