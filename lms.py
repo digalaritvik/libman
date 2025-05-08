@@ -175,26 +175,11 @@ st.markdown("""
 
 # Predefined datasets
 BOOK_CATEGORIES = [
+    "8",
     "Fiction",
     "Non-Fiction",
     "Science",
-    "Technology",
-    "History",
-    "Biography",
-    "Business",
-    "Arts",
-    "Literature",
-    "Philosophy",
-    "Psychology",
-    "Education",
-    "Reference",
-    "Children",
-    "Comics",
-    "Poetry",
-    "Drama",
-    "Religion",
-    "Social Science",
-    "Travel"
+    "Technology"
 ]
 
 BOOK_LANGUAGES = [
