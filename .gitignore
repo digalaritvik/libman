@@ -35,5 +35,5 @@ ENV/
 .streamlit/
 
 # Application specific
-srp/
+
 *.log 

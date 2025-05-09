@@ -92,158 +92,158 @@ BOOK_LANGUAGES = [
 ]
 
 POPULAR_BOOKS = [
-    {
-        "title": "To Kill a Mockingbird",
-        "author": "Harper Lee",
-        "category": "Fiction",
-        "language": "English",
-        "price": 12.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71FxgtFKcQL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "1984",
-        "author": "George Orwell",
-        "category": "Fiction",
-        "language": "English",
-        "price": 10.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71kxa1-0mfL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "The Alchemist",
-        "author": "Paulo Coelho",
-        "category": "Fiction",
-        "language": "English",
-        "price": 11.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71aFt4+OTOL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "Brief History of Time",
-        "author": "Stephen Hawking",
-        "category": "Science",
-        "language": "English",
-        "price": 14.99,
-        "cover_url": "https://m.media-amazon.com/images/I/A1xkFZX5k-L.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "The Power of Habit",
-        "author": "Charles Duhigg",
-        "category": "Psychology",
-        "language": "English",
-        "price": 13.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "Wings of Fire",
-        "author": "APJ Abdul Kalam",
-        "category": "Biography",
-        "language": "English",
-        "price": 9.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71KKZlVjbwL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "Zero to One",
-        "author": "Peter Thiel",
-        "category": "Business",
-        "language": "English",
-        "price": 15.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71m-MxdJ2WL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "Sapiens",
-        "author": "Yuval Noah Harari",
-        "category": "History",
-        "language": "English",
-        "price": 16.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71N3-FFSDxL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "The Art of War",
-        "author": "Sun Tzu",
-        "category": "Philosophy",
-        "language": "English",
-        "price": 8.99,
-        "cover_url": "https://m.media-amazon.com/images/I/71KM8RhcgbL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "Clean Code",
-        "author": "Robert C. Martin",
-        "category": "Technology",
-        "language": "English",
-        "price": 19.99,
-        "cover_url": "https://m.media-amazon.com/images/I/41xShlnTZTL.AC_UF1000,1000_QL80.jpg"
-    },
-    {
-        "title": "The Feynman Lectures on Physics",
-        "author": "Richard P. Feynman",
-        "category": "Physics",
-        "language": "English",
-        "price": 24.99,
-        "cover_url": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-        "title": "Chemistry: The Central Science",
-        "author": "Theodore L. Brown",
-        "category": "Chemistry",
-        "language": "English",
-        "price": 29.99,
-        "cover_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-        "title": "Automate the Boring Stuff with Python",
-        "author": "Al Sweigart",
-        "category": "Coding",
-        "language": "English",
-        "price": 21.99,
-        "cover_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-        "title": "A Brief History of Time",
-        "author": "Stephen Hawking",
-        "category": "Physics",
-        "language": "English",
-        "price": 18.99,
-        "cover_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-        "title": "Six Easy Pieces",
-        "author": "Richard P. Feynman",
-        "category": "Physics",
-        "language": "English",
-        "price": 15.99,
-        "cover_url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-        "title": "Organic Chemistry as a Second Language",
-        "author": "David R. Klein",
-        "category": "Chemistry",
-        "language": "English",
-        "price": 22.99,
-        "cover_url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-        "title": "The Disappearing Spoon",
-        "author": "Sam Kean",
-        "category": "Chemistry",
-        "language": "English",
-        "price": 17.99,
-        "cover_url": "https://images.unsplash.com/photo-1517971071642-34a2d3eccb5e?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-        "title": "Clean Code",
-        "author": "Robert C. Martin",
-        "category": "Coding",
-        "language": "English",
-        "price": 19.99,
-        "cover_url": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-        "title": "Eloquent JavaScript",
-        "author": "Marijn Haverbeke",
-        "category": "Coding",
-        "language": "English",
-        "price": 16.99,
-        "cover_url": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
-    }
+    # {
+    #     "title": "To Kill a Mockingbird",
+    #     "author": "Harper Lee",
+    #     "category": "Fiction",
+    #     "language": "English",
+    #     "price": 12.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/71FxgtFKcQL.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "1984",
+    #     "author": "George Orwell",
+    #     "category": "Fiction",
+    #     "language": "English",
+    #     "price": 10.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/71kxa1-0mfL.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "The Alchemist",
+    #     "author": "Paulo Coelho",
+    #     "category": "Fiction",
+    #     "language": "English",
+    #     "price": 11.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/71aFt4+OTOL.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "Brief History of Time",
+    #     "author": "Stephen Hawking",
+    #     "category": "Science",
+    #     "language": "English",
+    #     "price": 14.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/A1xkFZX5k-L.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "The Power of Habit",
+    #     "author": "Charles Duhigg",
+    #     "category": "Psychology",
+    #     "language": "English",
+    #     "price": 13.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "Wings of Fire",
+    #     "author": "APJ Abdul Kalam",
+    #     "category": "Biography",
+    #     "language": "English",
+    #     "price": 9.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/71KKZlVjbwL.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "Zero to One",
+    #     "author": "Peter Thiel",
+    #     "category": "Business",
+    #     "language": "English",
+    #     "price": 15.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/71m-MxdJ2WL.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "Sapiens",
+    #     "author": "Yuval Noah Harari",
+    #     "category": "History",
+    #     "language": "English",
+    #     "price": 16.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/71N3-FFSDxL.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "The Art of War",
+    #     "author": "Sun Tzu",
+    #     "category": "Philosophy",
+    #     "language": "English",
+    #     "price": 8.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/71KM8RhcgbL.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "Clean Code",
+    #     "author": "Robert C. Martin",
+    #     "category": "Technology",
+    #     "language": "English",
+    #     "price": 19.99,
+    #     "cover_url": "https://m.media-amazon.com/images/I/41xShlnTZTL.AC_UF1000,1000_QL80.jpg"
+    # },
+    # {
+    #     "title": "The Feynman Lectures on Physics",
+    #     "author": "Richard P. Feynman",
+    #     "category": "Physics",
+    #     "language": "English",
+    #     "price": 24.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+    # },
+    # {
+    #     "title": "Chemistry: The Central Science",
+    #     "author": "Theodore L. Brown",
+    #     "category": "Chemistry",
+    #     "language": "English",
+    #     "price": 29.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+    # },
+    # {
+    #     "title": "Automate the Boring Stuff with Python",
+    #     "author": "Al Sweigart",
+    #     "category": "Coding",
+    #     "language": "English",
+    #     "price": 21.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+    # },
+    # {
+    #     "title": "A Brief History of Time",
+    #     "author": "Stephen Hawking",
+    #     "category": "Physics",
+    #     "language": "English",
+    #     "price": 18.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=400&q=80"
+    # },
+    # {
+    #     "title": "Six Easy Pieces",
+    #     "author": "Richard P. Feynman",
+    #     "category": "Physics",
+    #     "language": "English",
+    #     "price": 15.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80"
+    # },
+    # {
+    #     "title": "Organic Chemistry as a Second Language",
+    #     "author": "David R. Klein",
+    #     "category": "Chemistry",
+    #     "language": "English",
+    #     "price": 22.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+    # },
+    # {
+    #     "title": "The Disappearing Spoon",
+    #     "author": "Sam Kean",
+    #     "category": "Chemistry",
+    #     "language": "English",
+    #     "price": 17.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1517971071642-34a2d3eccb5e?auto=format&fit=crop&w=400&q=80"
+    # },
+    # {
+    #     "title": "Clean Code",
+    #     "author": "Robert C. Martin",
+    #     "category": "Coding",
+    #     "language": "English",
+    #     "price": 19.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+    # },
+    # {
+    #     "title": "Eloquent JavaScript",
+    #     "author": "Marijn Haverbeke",
+    #     "category": "Coding",
+    #     "language": "English",
+    #     "price": 16.99,
+    #     "cover_url": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+    # }
 ]
 
 # Initialize custom datasets in session state

@@ -6,7 +6,9 @@ import os
 import hashlib
 import random
 import string
-from books_data import LARGE_BOOK_LIST
+
+from books_data import POPULAR_BOOKS
+
 
 # Initialize session state variables
 if 'initialized' not in st.session_state:
@@ -49,183 +51,23 @@ st.set_page_config(
 )
 
 # Custom CSS for styling
-st.markdown("""
-<style>
-    /* Main background and container styling */
-    .stApp {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-        color: #ffffff;
-    }
-    /* Book card styling */
-    .book-card {
-        background: rgba(30, 30, 30, 0.95);
-        border-radius: 16px;
-        padding: 24px;
-        margin: 18px 0;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 1.5px 4px rgba(0,0,0,0.12);
-        border: 2px solid #4F8EF7;
-        transition: transform 0.2s, box-shadow 0.2s;
-        position: relative;
-    }
-    .book-card:hover {
-        transform: translateY(-8px) scale(1.01);
-        box-shadow: 0 16px 32px rgba(79,142,247,0.18), 0 3px 8px rgba(0,0,0,0.18);
-        border-color: #7F53AC;
-    }
-    .book-card img {
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(79,142,247,0.18);
-        border: 2px solid #7F53AC;
-    }
-    .popular-badge {
-        position: absolute;
-        top: 18px;
-        right: 18px;
-        background: linear-gradient(90deg, #7F53AC 0%, #4F8EF7 100%);
-        color: #fff;
-        padding: 4px 14px;
-        border-radius: 12px;
-        font-size: 0.9em;
-        font-weight: bold;
-        box-shadow: 0 2px 8px rgba(127,83,172,0.18);
-    }
-    /* Sidebar user avatar */
-    .sidebar-avatar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
-    }
-    .sidebar-avatar img {
-        border-radius: 50%;
-        width: 64px;
-        height: 64px;
-        border: 3px solid #4F8EF7;
-        box-shadow: 0 2px 8px rgba(79,142,247,0.18);
-    }
-    /* Tab styling */
-    .stTabs [data-baseweb="tab-list"] {
-        background: #1a1a1a;
-        padding: 12px;
-        border-radius: 8px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        background: #2a2a2a;
-        color: #fff;
-        border: 2px solid #4F8EF7;
-        border-radius: 8px;
-        margin-right: 6px;
-        font-weight: 600;
-        font-size: 1.1em;
-        transition: background 0.2s, border 0.2s;
-    }
-    .stTabs [data-baseweb="tab"][aria-selected="true"] {
-        background: linear-gradient(90deg, #7F53AC 0%, #4F8EF7 100%);
-        border: none;
-        color: #fff;
-    }
-    /* Button styling */
-    .stButton > button {
-        background: linear-gradient(90deg, #7F53AC 0%, #4F8EF7 100%) !important;
-        color: #fff !important;
-        border: none !important;
-        padding: 10px 22px !important;
-        border-radius: 8px !important;
-        font-weight: 600;
-        font-size: 1.05em;
-        box-shadow: 0 2px 8px rgba(79,142,247,0.12);
-        transition: background 0.2s, box-shadow 0.2s;
-    }
-    .stButton > button:hover {
-        background: linear-gradient(90deg, #4F8EF7 0%, #7F53AC 100%) !important;
-        box-shadow: 0 4px 16px rgba(127,83,172,0.18);
-    }
-    /* Input field styling */
-    input[type="text"], input[type="password"], input[type="number"], input[type="email"], textarea,
-    .stTextInput > div > div > input,
-    .stTextArea > div > div > textarea,
-    .stNumberInput > div > div > input {
-        background: #1a1a1a !important;
-        color: #fff !important;
-        border: 2px solid #4F8EF7 !important;
-        border-radius: 6px !important;
-        padding: 10px 14px !important;
-        font-size: 1em !important;
-    }
-    /* Metric styling */
-    .stMetric {
-        background: linear-gradient(90deg, #7F53AC 0%, #4F8EF7 100%);
-        color: #fff !important;
-        border-radius: 10px;
-        padding: 10px 18px;
-        margin-bottom: 10px;
-        box-shadow: 0 2px 8px rgba(127,83,172,0.12);
-    }
-    /* Header styling */
-    h1, h2, h3, h4, h5, h6 {
-        color: #fff !important;
-        font-family: 'Segoe UI', 'Roboto', sans-serif;
-        letter-spacing: 0.5px;
-    }
-    /* Footer styling */
-    .st-emotion-cache-1y4p8pa, .st-emotion-cache-18ni7ap, .st-emotion-cache-r421ms {
-        background: transparent !important;
-    }
-</style>
-""", unsafe_allow_html=True)
+st.markdown(""" a""", unsafe_allow_html=True)
 
 # Predefined datasets
-BOOK_CATEGORIES = sorted(list(set(book["category"] for book in LARGE_BOOK_LIST)))
+BOOK_CATEGORIES = []  # Will be set after loading books
 
-BOOK_LANGUAGES = [
-    "English",
-    "Hindi",
-    "Telugu",
-    "Tamil",
-    "Malayalam",
-    "Kannada",
-    "Bengali",
-    "Marathi",
-    "Gujarati",
-    "Urdu",
-    "Sanskrit"
-]
-
-POPULAR_BOOKS = [
-    # Fiction
-    {"title": "To Kill a Mockingbird", "author": "Harper Lee", "category": "Fiction", "language": "English", "price": 12.99, "cover_url": "https://m.media-amazon.com/images/I/71FxgtFKcQL.AC_UF1000,1000_QL80.jpg", "description": "A classic novel about racial injustice and moral growth in the American South during the 1930s.", "isbn": "9780446310789", "pages": 281, "publisher": "Grand Central Publishing", "publication_date": "1988-10-11"},
-    {"title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "category": "Fiction", "language": "English", "price": 9.99, "cover_url": "https://m.media-amazon.com/images/I/71FTb9X6wsL.AC_UF1000,1000_QL80.jpg", "description": "A story of decadence and excess, exploring themes of the American Dream and social class in the 1920s.", "isbn": "9780743273565", "pages": 180, "publisher": "Scribner", "publication_date": "2004-09-30"},
-    # ... 23 more Fiction books (varied languages, authors, details) ...
-    # Non-Fiction
-    {"title": "Educated", "author": "Tara Westover", "category": "Non-Fiction", "language": "English", "price": 13.99, "cover_url": "https://m.media-amazon.com/images/I/81WojUxbbFL.jpg", "description": "A memoir about a woman who grows up in a survivalist family and eventually escapes to learn about the world through education.", "isbn": "9780399590504", "pages": 352, "publisher": "Random House", "publication_date": "2018-02-20"},
-    # ... 24 more Non-Fiction books ...
-    # Science
-    {"title": "A Brief History of Time", "author": "Stephen Hawking", "category": "Science", "language": "English", "price": 14.99, "cover_url": "https://m.media-amazon.com/images/I/A1xkFZX5k-L.AC_UF1000,1000_QL80.jpg", "description": "A landmark volume in science writing exploring the mysteries of space, time, and black holes.", "isbn": "9780553380163", "pages": 212, "publisher": "Bantam", "publication_date": "1998-09-01"},
-    # ... 24 more Science books ...
-    # Technology
-    {"title": "Clean Code", "author": "Robert C. Martin", "category": "Technology", "language": "English", "price": 19.99, "cover_url": "https://m.media-amazon.com/images/I/41xShlnTZTL.AC_UF1000,1000_QL80.jpg", "description": "A handbook of agile software craftsmanship that teaches how to write clean, maintainable code.", "isbn": "9780132350884", "pages": 464, "publisher": "Prentice Hall", "publication_date": "2008-08-11"},
-    # ... 24 more Technology books ...
-    # History
-    {"title": "Sapiens", "author": "Yuval Noah Harari", "category": "History", "language": "English", "price": 16.99, "cover_url": "https://m.media-amazon.com/images/I/71N3-FFSDxL.AC_UF1000,1000_QL80.jpg", "description": "A groundbreaking narrative of humanity's creation and evolution that explores the ways in which biology and history have defined us.", "isbn": "9780062316097", "pages": 443, "publisher": "Harper", "publication_date": "2015-02-10"},
-    # ... 24 more History books ...
-    # Biography
-    {"title": "Wings of Fire", "author": "APJ Abdul Kalam", "category": "Biography", "language": "English", "price": 9.99, "cover_url": "https://m.media-amazon.com/images/I/71KKZlVjbwL.AC_UF1000,1000_QL80.jpg", "description": "An autobiography of India's most loved President, sharing his journey from a small town to becoming a renowned scientist.", "isbn": "9788173711466", "pages": 180, "publisher": "Universities Press", "publication_date": "1999-01-01"},
-    # ... 24 more Biography books ...
-    # Business
-    {"title": "Zero to One", "author": "Peter Thiel", "category": "Business", "language": "English", "price": 15.99, "cover_url": "https://m.media-amazon.com/images/I/71m-MxdJ2WL.AC_UF1000,1000_QL80.jpg", "description": "A book about how to build companies that create new things, based on the author's experience as a co-founder of PayPal.", "isbn": "9780804139298", "pages": 224, "publisher": "Crown Business", "publication_date": "2014-09-16"},
-    # ... 24 more Business books ...
-    # Repeat for all other categories, ensuring at least 25 books per category, with a mix of languages and authors.
-]
+# Set BOOK_LANGUAGES after loading books
+BOOK_LANGUAGES = sorted(list({book["language"] for book in st.session_state.books if "language" in book}))
 
 # Initialize custom datasets in session state
 if 'custom_categories' not in st.session_state:
-    st.session_state.custom_categories = list(set([book["category"] for book in POPULAR_BOOKS]))
+    st.session_state.custom_categories = []
 if 'custom_languages' not in st.session_state:
-    st.session_state.custom_languages = list(set([book["language"] for book in POPULAR_BOOKS]))
+    st.session_state.custom_languages = []
 if 'custom_authors' not in st.session_state:
-    st.session_state.custom_authors = list(set([book["author"] for book in POPULAR_BOOKS]))
+    st.session_state.custom_authors = []
 if 'custom_books' not in st.session_state:
-    st.session_state.custom_books = POPULAR_BOOKS.copy()
+    st.session_state.custom_books = []
 
 PRICE_RANGES = [
     (0, 10, "Under $10"),
@@ -240,7 +82,7 @@ PRICE_RANGES = [
 # Helper functions
 def load_data():
     """Load data from JSON files"""
-    # Create srp directory if it doesn't exist
+    # No import from books_data
     os.makedirs("srp", exist_ok=True)
 
     # Load users
@@ -248,7 +90,6 @@ def load_data():
         with open(USERS_FILE, 'r') as f:
             st.session_state.users = json.load(f)
     else:
-        # Create default admin user
         st.session_state.users = {
             "admin": {
                 "password": hashlib.sha256("admin123".encode()).hexdigest(),
@@ -260,26 +101,10 @@ def load_data():
 
     # Load books
     if os.path.exists(BOOKS_FILE) and os.path.getsize(BOOKS_FILE) > 0:
-        with open(BOOKS_FILE, 'r') as f:
+        with open(BOOKS_FILE, 'r', encoding='utf-8') as f:
             st.session_state.books = json.load(f)
     else:
         st.session_state.books = []
-        # Initialize with sample books if empty
-        for book in POPULAR_BOOKS:
-            new_book = {
-                "id": generate_book_id(),
-                "title": book["title"],
-                "author": book["author"],
-                "category": book["category"],
-                "language": book["language"],
-                "price": book["price"],
-                "quantity": random.randint(1, 10),
-                "available": random.randint(1, 10),
-                "description": f"A {book['category']} book by {book['author']}",
-                "cover_url": book["cover_url"]
-            }
-            new_book["available"] = min(new_book["available"], new_book["quantity"])
-            st.session_state.books.append(new_book)
         save_books()
 
     # Load borrowings
@@ -315,17 +140,16 @@ def load_data():
         save_return_requests()
 
     # Update session state with custom datasets
-    st.session_state.custom_categories = list(
-        set([book["category"] for book in st.session_state.books] + [book["category"] for book in POPULAR_BOOKS]))
-    st.session_state.custom_languages = list(
-        set([book["language"] for book in st.session_state.books] + [book["language"] for book in POPULAR_BOOKS]))
-    st.session_state.custom_authors = list(
-        set([book["author"] for book in st.session_state.books] + [book["author"] for book in POPULAR_BOOKS]))
-    st.session_state.custom_books = POPULAR_BOOKS.copy()
+    # Set global categories and languages for use elsewhere
+    global BOOK_CATEGORIES, BOOK_LANGUAGES
+    BOOK_CATEGORIES = sorted(list(set(book["category"] for book in st.session_state.books)))
+    BOOK_LANGUAGES = sorted(list(set(book["language"] for book in st.session_state.books)))
+    st.session_state.custom_categories = BOOK_CATEGORIES.copy()
+    st.session_state.custom_languages = BOOK_LANGUAGES.copy()
+    st.session_state.custom_authors = list(set([book["author"] for book in st.session_state.books]))
+    st.session_state.custom_books = st.session_state.books.copy()
 
-    # Generate recommendations
     generate_recommendations()
-
     st.session_state.initialized = True
 
 
@@ -523,103 +347,76 @@ else:
                               if search_query in book["title"].lower() or
                               search_query in book["author"].lower()]
 
-        # Pagination logic
-        books_per_page = 10
-        total_books = len(filtered_books)
-        total_pages = (total_books - 1) // books_per_page + 1 if total_books > 0 else 1
-        if 'browse_books_page' not in st.session_state:
-            st.session_state.browse_books_page = 1
-        
-        # Page navigation controls
-        col_page1, col_page2, col_page3 = st.columns([1,2,1])
-        with col_page1:
-            if st.button('Previous', disabled=st.session_state.browse_books_page == 1):
-                st.session_state.browse_books_page = max(1, st.session_state.browse_books_page - 1)
-        with col_page2:
-            st.markdown(f"<div style='text-align:center; font-weight:bold;'>Page {st.session_state.browse_books_page} of {total_pages}</div>", unsafe_allow_html=True)
-        with col_page3:
-            if st.button('Next', disabled=st.session_state.browse_books_page == total_pages):
-                st.session_state.browse_books_page = min(total_pages, st.session_state.browse_books_page + 1)
-
-        # Calculate which books to show
-        start_idx = (st.session_state.browse_books_page - 1) * books_per_page
-        end_idx = start_idx + books_per_page
-        books_to_display = filtered_books[start_idx:end_idx]
-
         # Display books
-        if books_to_display:
-            for book in books_to_display:
-                with st.container():
-                    st.markdown('<div class="book-card">', unsafe_allow_html=True)
-                    if book['title'] in [b['title'] for b in POPULAR_BOOKS]:
-                        st.markdown('<div class="popular-badge">🌟 Popular</div>', unsafe_allow_html=True)
-                    col1, col2, col3 = st.columns([1, 2, 1])
+        for book in filtered_books:
+            with st.container():
+                st.markdown('<div class="book-card">', unsafe_allow_html=True)
+                if book['title'] in [b['title'] for b in POPULAR_BOOKS]:
+                    st.markdown('<div class="popular-badge">🌟 Popular</div>', unsafe_allow_html=True)
+                col1, col2, col3 = st.columns([1, 2, 1])
 
-                    with col1:
-                        if book.get('cover_url'):
-                            st.image(book['cover_url'], width=150)
-                        else:
-                            st.image("https://via.placeholder.com/150x200?text=No+Cover", width=150)
+                with col1:
+                    if book.get('cover_url'):
+                        st.image(book['cover_url'], width=150)
+                    else:
+                        st.image("https://via.placeholder.com/150x200?text=No+Cover", width=150)
 
-                    with col2:
-                        st.markdown(f"### {book['title']}")
-                        st.markdown(f"*Author:* {book['author']}")
-                        st.markdown(f"*Category:* {book['category']}")
-                        st.markdown(f"*Language:* {book['language']}")
-                        if book.get('description'):
-                            st.markdown(f"*Description:* {book['description']}")
+                with col2:
+                    st.markdown(f"### {book['title']}")
+                    st.markdown(f"*Author:* {book['author']}")
+                    st.markdown(f"*Category:* {book['category']}")
+                    st.markdown(f"*Language:* {book['language']}")
+                    if book.get('description'):
+                        st.markdown(f"*Description:* {book['description']}")
 
-                        # Show recommendations
-                        if book["id"] in st.session_state.book_recommendations:
-                            st.markdown("*Students also read:*")
-                            for rec_id in st.session_state.book_recommendations[book["id"]]:
-                                rec_book = next(b for b in st.session_state.books if b["id"] == rec_id)
-                                st.markdown(f"- {rec_book['title']} by {rec_book['author']}")
+                    # Show recommendations
+                    if book["id"] in st.session_state.book_recommendations:
+                        st.markdown("*Students also read:*")
+                        for rec_id in st.session_state.book_recommendations[book["id"]]:
+                            rec_book = next(b for b in st.session_state.books if b["id"] == rec_id)
+                            st.markdown(f"- {rec_book['title']} by {rec_book['author']}")
 
-                    with col3:
-                        if st.session_state.is_admin:
-                            st.markdown(f"*Price:* ${book['price']:.2f}")
-                        st.markdown(f"*Available:* {book['available']}/{book['quantity']}")
-                        if book['available'] > 0:
-                            if st.button("Borrow", key=f"borrow_{book['id']}"):
-                                # Add borrowing record
-                                borrowing = {
-                                    "id": ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)),
-                                    "book_id": book["id"],
-                                    "book_title": book["title"],
-                                    "username": st.session_state.username,
-                                    "borrow_date": datetime.datetime.now().strftime("%Y-%m-%d"),
-                                    "return_date": None,
-                                    "price": book["price"]
-                                }
-                                st.session_state.borrowings.append(borrowing)
-                                save_borrowings()
+                with col3:
+                    if st.session_state.is_admin:
+                        st.markdown(f"*Price:* ${book['price']:.2f}")
+                    st.markdown(f"*Available:* {book['available']}/{book['quantity']}")
+                    if book['available'] > 0:
+                        if st.button("Borrow", key=f"borrow_{book['id']}"):
+                            # Add borrowing record
+                            borrowing = {
+                                "id": ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)),
+                                "book_id": book["id"],
+                                "book_title": book["title"],
+                                "username": st.session_state.username,
+                                "borrow_date": datetime.datetime.now().strftime("%Y-%m-%d"),
+                                "return_date": None,
+                                "price": book["price"]
+                            }
+                            st.session_state.borrowings.append(borrowing)
+                            save_borrowings()
 
-                                # Add transaction record
-                                transaction = {
-                                    "id": ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)),
-                                    "type": "borrow",
-                                    "book_id": book["id"],
-                                    "book_title": book["title"],
-                                    "username": st.session_state.username,
-                                    "amount": book["price"],
-                                    "date": datetime.datetime.now().strftime("%Y-%m-%d")
-                                }
-                                st.session_state.transactions.append(transaction)
-                                save_transactions()
-
-                                # Update book availability
-                                book["available"] -= 1
-                                save_books()
-
-                                st.success(
-                                    f"Book '{book['title']}' borrowed successfully! Amount: ${book['price']:.2f}")
-                                st.rerun()
+                            # Add transaction record
+                            transaction = {
+                                "id": ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)),
+                                "type": "borrow",
+                                "book_id": book["id"],
+                                "book_title": book["title"],
+                                "username": st.session_state.username,
+                                "amount": book["price"],
+                                "date": datetime.datetime.now().strftime("%Y-%m-%d")
+                            }
+                            st.session_state.transactions.append(transaction)
+                            save_transactions()
+                            # Update book availability
+                            book["available"] -= 1
+                            save_books()
+                            st.success(
+                                f"Book '{book['title']}' borrowed successfully! Amount: ${book['price']:.2f}")
+                            st.rerun()
                         else:
                             st.markdown("*Out of Stock*")
-
-                    st.markdown('</div>', unsafe_allow_html=True)
-        else:
+                st.markdown('</div>', unsafe_allow_html=True)
+        if not filtered_books:
             st.info("No books found matching your criteria.")
 
     # Borrow/Return tab
@@ -1066,7 +863,7 @@ else:
                         st.success(f"Author '{new_author}' added successfully!")
 
             with col2:
-                author_to_remove = st.selectbox("Remove Author", st.session_state.custom_authors)
+                author_to_remove = st.selectbox("Remove Author", st.session_state.custom_authors, key="remove_author_selectbox")
                 if st.button("Remove Author"):
                     if author_to_remove:
                         st.session_state.custom_authors.remove(author_to_remove)
@@ -1084,10 +881,10 @@ else:
             col1, col2 = st.columns(2)
             with col1:
                 new_book_title = st.text_input("Book Title")
-                new_book_author = st.selectbox("Author", st.session_state.custom_authors)
+                new_book_author = st.selectbox("Author", st.session_state.custom_authors, key="add_book_author_selectbox")
             with col2:
-                new_book_category = st.selectbox("Category", st.session_state.custom_categories)
-                new_book_language = st.selectbox("Language", st.session_state.custom_languages)
+                new_book_category = st.selectbox("Category", st.session_state.custom_categories, key="add_book_category_selectbox")
+                new_book_language = st.selectbox("Language", st.session_state.custom_languages, key="add_book_language_selectbox")
 
             if st.button("Add Book", key="add_book_popular_books"):
                 if new_book_title and new_book_author and new_book_category and new_book_language:
